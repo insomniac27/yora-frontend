@@ -1,18 +1,26 @@
 import React, { useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import whatsapp from "../assets/WhatsAppImg.png";
 import { productlist } from "../ProductList";
 import Carousel from "../components/Carousel";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, onOpen } from "../store/slices/cartSlice";
+import { addToWishlist } from "../store/slices/wishlistSlice";
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const isInWishlist = wishlistItems.some((item) => item.id === productId);
+
   const { product_name, price, sizes, product_images } = productlist.find(
     (el) => el.id == productId
   );
   const [activeSize, setActiveSize] = useState(sizes[0]);
+
+  console.log(wishlistItems);
 
   const addToCartHandler = () => {
     dispatch(
@@ -25,6 +33,22 @@ const ProductDetail = () => {
       })
     );
     dispatch(onOpen());
+  };
+
+  const handleWishlistClick = () => {
+    if (isInWishlist) {
+      navigate("/wishlist");
+    } else {
+      dispatch(
+        addToWishlist({
+          id: productId,
+          name: product_name,
+          price,
+          image: product_images[0],
+          size: activeSize,
+        })
+      );
+    }
   };
 
   return (
@@ -65,7 +89,7 @@ const ProductDetail = () => {
             </div>
           </div>
           <hr className="h-px mt-4 bg-gray-300 border-0" />
-          
+
           {/* Buttons Container */}
           <div className="w-full flex flex-col space-y-4 mt-3">
             {/* Add to Cart Row */}
@@ -77,7 +101,14 @@ const ProductDetail = () => {
                 ADD TO CART
               </button>
 
-              <button className="flex items-center justify-center text-black hover:text-white bg-white rounded-full w-11 h-11 hover:bg-black flex-shrink-0">
+              <button
+                onClick={handleWishlistClick}
+                className={`flex justify-center items-center  rounded-full w-11 h-11  ${
+                  isInWishlist
+                    ? "bg-black text-white"
+                    : " bg-white hover:bg-black hover:text-white "
+                }`}
+              >
                 <svg
                   width="22"
                   height="17"
