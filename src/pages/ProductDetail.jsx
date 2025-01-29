@@ -20,7 +20,6 @@ const ProductDetail = () => {
   );
   const [activeSize, setActiveSize] = useState(sizes[0]);
 
-  console.log(wishlistItems);
 
   const addToCartHandler = () => {
     dispatch(
