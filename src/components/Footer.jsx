@@ -49,9 +49,9 @@ const Footer = () => {
             {isShow.social &&  
             <Link
               className=" text-xs text-[#999]"
-              to="mailto:contact@cilvrstudio.com"       
+              to="mailto:Contact@yoraa.in"       
             >
-              contact@cilvrstudio.com
+              Contact@yoraa.in
             </Link> }
             <hr className="h-px  mr-3 bg-white  " />
            
