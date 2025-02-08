@@ -9,6 +9,12 @@ import Wishlist from "./pages/Wishlist";
 import ProductDetail from "./pages/ProductDetail";
 import CartSidebar from "./components/Cart/CartSidebar";
 import EditModal from "./components/Cart/EditModal"; 
+import ContactUs from "./pages/ContactUs";
+import ShippingAndDelivery from "./pages/ShippingAndDelivery";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RefundAndCancel from "./pages/RefundAndCancel";
+
 
 
 const App = () => {
@@ -22,6 +28,11 @@ const App = () => {
         <Route path="products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/shipping-and-delivery" element={<ShippingAndDelivery />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-cancel" element={<RefundAndCancel />} />
       </Routes>
       <CartSidebar  />
       <EditModal />
