@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       {/* "Mobile Footer" */}
       <div className=" sm:hidden block">
-        <div className=" flex flex-col mx-4 bg-black rounded-xl">
+        <div className=" flex flex-col my-8 mx-4 bg-black rounded-xl">
           <div className=" flex flex-col text-white font-light px-3 py-2  gap-4">
             <div
               onClick={() =>
@@ -51,9 +51,9 @@ const Footer = () => {
             {isShow.social && (
               <Link
                 className=" text-xs text-[#999]"
-                to="mailto:Contact@yoraa.in"
+                to="mailto:contact@yoraa.in"
               >
-                Contact@yoraa.in
+                contact@yoraa.in
               </Link>
             )}
             <hr className="h-px  mr-3 bg-white  " />
@@ -97,8 +97,16 @@ const Footer = () => {
             {isShow.brand && (
               <ul className=" flex flex-col gap-3 text-xs text-[#999]">
                 <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Terms & Conditions</li>
+                <Link to="/contact-us">
+                  <li>Contact Us</li>
+                </Link>
+
+                <Link to="/terms-and-conditions">
+                  <li>Terms & Conditions</li>
+                </Link>
+                <Link to="/privacy-policy">
+                  <li>Privacy Policy</li>
+                </Link>
               </ul>
             )}
             <hr className="h-px  mr-3 bg-white  " />
@@ -141,9 +149,14 @@ const Footer = () => {
             </div>
             {isShow.cservices && (
               <ul className=" flex flex-col gap-3 text-xs text-[#999] ">
-                <li>Refund Policy</li>
-                <li>Payment Policy</li>
-                <li>Shipping Policy</li>
+                <Link to="/refund-cancel">        
+                <li>Refund And Cancel Policy</li>
+                </Link>
+                <li>Payment Policy</li>            
+                
+                <Link to="/shipping-and-delivery">            
+                <li>Shipping And Delivery Policy</li>
+                </Link>
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
@@ -151,24 +164,27 @@ const Footer = () => {
             )}
             <hr className="h-px  mr-3 bg-white  " />
           </div>
+          <div>
+          <p className=" py-4 text-white w-full font-light text-center text-xs">© 2024 YORA. All rights reserved.</p>
+          </div>
         </div>
       </div>
 
       {/* "Large Screen Footer" */}
       <div className=" hidden sm:block">
-        <div className=" grid sm:grid-cols-3  mx-7 my-8 rounded-xl">
-          <div className=" min-h-80 bg-black  col-span-1 rounded-l-2xl">
+        <div className=" grid sm:grid-cols-3  mx-7 my-8 bg-black  rounded-l-2xl rounded-r-2xl">
+          <div className=" min-h-64  col-span-1 rounded-l-2xl">
             <div className=" flex flex-col text-white font-light ml-6 mt-8 gap-4">
               <h3 className=" text-sm">SOCIAL</h3>
-              <a
+              <Link
                 className=" text-xs text-[#999]"
-                href="mailto:contact@cilvrstudio.com"
+                 to="mailto:contact@yoraa.in"
               >
-                contact@cilvrstudio.com
-              </a>
+                contact@yoraa.in
+              </Link>
             </div>
           </div>
-          <div className=" min-h-80 bg-black  col-span-1">
+          <div className=" min-h-64 bg-black  col-span-1">
             <div className=" flex flex-col text-white font-light ml-6 mt-8 gap-4">
               <h3 className=" text-sm">BRAND</h3>
 
@@ -187,7 +203,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className=" min-h-80 bg-black col-span-1 rounded-r-2xl">
+          <div className=" min-h-64 bg-black col-span-1 rounded-r-2xl">
             <div className=" flex flex-col text-white font-light ml-6 mt-8 gap-4 ">
               <h3 className=" text-sm">CLIENT SERVICES</h3>
 
@@ -205,6 +221,12 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
+            <div className=" py-3 col-span-3 ">
+            <hr className="h-px  mx-10 bg-white " />
+              <p className=" py-4 pt-6 text-white w-full font-light text-center text-xs">© 2024 YORA. All rights reserved.</p>
+            </div>
+
         </div>
       </div>
     </>
