@@ -224,7 +224,7 @@ const Footer = () => {
 
             <div className=" py-3 col-span-3 ">
             <hr className="h-px  mx-10 bg-white " />
-              <p className=" py-4 pt-6 text-white w-full font-light text-center text-xs">© 2024 YORA. All rights reserved.</p>
+              <p className=" py-4 pt-6 text-white w-full font-light text-center text-xs">© 2025 YORA. All rights reserved.</p>
             </div>
 
         </div>
