@@ -93,7 +93,7 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
         </button>
 
         {/* Modal content */}
-        <div className="grid grid-cols-1 gap-[168px] sm:gap-0 md:grid-cols-2 bg-gray-50 h-full overflow-y-auto">
+        <div className="grid grid-cols-1 gap-[148px] sm:gap-0 md:grid-cols-2 bg-gray-50 h-full overflow-y-auto">
           {/* Left side - Carousel */}
           <div className="md:h-full h-[42vh]">
             <Carousel data={product_images} />
