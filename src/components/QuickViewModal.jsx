@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice";
 import Carousel from "../components/Carousel";
 import { productlist } from "../ProductList";
+import { addToWishlist, removeFromWishlist } from "../store/slices/wishlistSlice";
 
 const QuickViewModal = ({ isOpen, onClose, productId }) => {
   const dispatch = useDispatch();
@@ -10,11 +11,12 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
     (el) => el.id == productId
   );
 
-  const [activeSize, setActiveSize] = useState(sizes[0]);
+  const wishlistItems = useSelector((state) => state.wishlist.items);
+  const isInWishlist = wishlistItems.some((item) => item.id === productId);
 
+  const [activeSize, setActiveSize] = useState(sizes[0]);
   const [qty, setQty] = useState(0);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -40,7 +42,22 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
     onClose();
   };
 
-  // Close modal when clicking outside
+  const handleWishlistClick = () => {
+      if (isInWishlist) {
+        dispatch(removeFromWishlist(productId))
+      } else {
+        dispatch(
+          addToWishlist({
+            id: productId,
+            name: product_name,
+            price,
+            image: product_images[0],
+            size: activeSize,
+          })
+        );
+      }
+    };
+
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -54,13 +71,12 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
       className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
       onClick={handleBackdropClick}
     >
-      <div className="relative bg-white w-[90%] max-w-5xl max-h-[90vh] rounded-lg overflow-hidden">
+      <div className="relative pt-8  sm:pt-0 bg-white w-[90%] max-w-5xl md:h-[78vh] h-[85vh] rounded-lg overflow-hidden">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute right-1 top-1 z-10 w-8 h-8 flex items-center justify-center  rounded-full text-gray-600 hover:text-black"
+          className="absolute right-1 sm:right-1 top-0 sm:top-1 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-600 hover:text-black"
         >
-          <span className="sr-only">Close</span>
           <svg
             className="w-4 h-3"
             viewBox="0 0 14 14"
@@ -77,14 +93,14 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
         </button>
 
         {/* Modal content */}
-        <div className="grid grid-cols-2 gap-3 bg-gray-50 h-full">
+        <div className="grid grid-cols-1 gap-[168px] sm:gap-0 md:grid-cols-2 bg-gray-50 h-full overflow-y-auto">
           {/* Left side - Carousel */}
-          <div className="col-span-1 min-h-64">
+          <div className="md:h-full h-[42vh]">
             <Carousel data={product_images} />
           </div>
 
           {/* Right side - Product details */}
-          <div className="col-span-1 p-6 overflow-y-auto">
+          <div className="p-6">
             <div className="flex flex-col">
               <h2 className="font-semibold text-base mb-2">{product_name}</h2>
               <p className="text-sm text-gray-500">
@@ -118,12 +134,12 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
 
               {/* Action buttons */}
               <div className="flex flex-col gap-4 mt-4">
-                <div className=" flex gap-2 items-center">
-                  {/* "Quantity increment and decrement" */}
+                <div className="flex gap-2 items-center">
+                  {/* Quantity increment and decrement */}
                   <div className="relative flex items-center mx-auto max-w-[132px] border-2 border-gray-300 rounded-lg">
                     <button
                       type="button"
-                      onClick={() => setQty((prev) => prev - 1)}
+                      onClick={() => setQty((prev) => Math.max(0, prev - 1))}
                       className="bg-white hover:bg-gray-200 rounded-s-lg p-3 h-11"
                     >
                       <svg
@@ -155,7 +171,7 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
                       onClick={() => setQty((prev) => prev + 1)}
                       className="bg-white hover:bg-gray-200 rounded-e-lg p-3 h-11"
                     >
-                      <svg
+                    <svg
                         className="w-3 h-3 text-gray-900"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
@@ -174,12 +190,18 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
                   </div>
                   <button
                     onClick={handleAddToCart}
-                    className="w-full  h-12 border text-sm rounded-md text-black hover:bg-black hover:text-white transition-all duration-300"
+                    className="w-full h-12 border text-sm rounded-md text-black hover:bg-black hover:text-white transition-all duration-300"
                   >
                     ADD TO CART
                   </button>
-                  {/* "Add to wishlist" */}
-                  <button className="flex items-center justify-center aspect-square text-black hover:text-white bg-white rounded-full w-12 h-11 hover:bg-black">
+                  {/* Add to wishlist */}
+                  <button 
+                   onClick={handleWishlistClick}
+                  className={`flex items-center justify-center aspect-square rounded-full w-12 h-11 ${
+                    isInWishlist
+                      ? "bg-black text-white"
+                      : " bg-white hover:bg-black hover:text-white "
+                  } `}>
                     <svg
                       width="22"
                       height="17"
@@ -203,5 +225,7 @@ const QuickViewModal = ({ isOpen, onClose, productId }) => {
     </div>
   );
 };
+
+
 
 export default QuickViewModal;
