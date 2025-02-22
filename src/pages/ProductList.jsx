@@ -3,16 +3,17 @@ import { productlist } from "../ProductList.js";
 import ProductCard from "../components/ProductCard.jsx";
 import {SortDropdown} from "../components/SortDropdown.jsx"
 
+
 const ProductList = () => {
   return (
-    <div className="max-h-full w-full	 ">
-      <h1 className=" w-full text-center font-light text-3xl my-3">
+    <div className="max-h-full w-full">
+      <h1 className="w-full text-center font-light text-3xl my-3">
         Product List
       </h1>
-      {/* "Filter and Sort Bar" */}
-      <div className=" flex flex-row xl:justify-between mx-2 ">
-        {/* "Filter Button" */}
-        <div className=" flex justify-center items-center">
+      {/* Filter and Sort Bar */}
+      <div className="flex flex-row justify-between md:justify-between xl:justify-between mx-2">
+        {/* Filter Button and Results Count */}
+        <div className="flex justify-center items-center">
           <button className="bg-black hover:bg-white hover:text-black hover:border hover:border-black flex gap-1 items-center w-20 justify-center mx-4 py-1 px-12 rounded-sm transition-colors duration-300 group">
             <div className="group-hover:fill-black">
               <svg
@@ -33,16 +34,20 @@ const ProductList = () => {
             </p>
           </button>
 
-          <p className=" hidden xl:block text-sm text-gray-700">
+          <p className="hidden md:block xl:block text-sm text-gray-700">
             There are {productlist.length} results in total
           </p>
         </div>
         <SortDropdown />
       </div>
-      <div className=" grid xl:gap-3 grid-cols-2 xl:grid-cols-4 xl:mx-6 my-4">
+      {/* Product Grid */}
+      <div className="grid gap-3 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 md:mx-4 xl:mx-6 my-4">
         {productlist.map((el) => {
           return (
-            <div key={el.id} className=" w-[200px] pl-4 col-span-1 xl:col-span-1">
+            <div 
+              key={el.id} 
+              className="w-[200px] md:w-auto pl-4 md:pl-0 col-span-1"
+            >
               <ProductCard
                 imgUrl={el.product_images}
                 name={el.product_name}
@@ -57,7 +62,5 @@ const ProductList = () => {
     </div>
   );
 };
-
-
 
 export default ProductList;

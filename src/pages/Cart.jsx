@@ -52,9 +52,9 @@ const Cart = () => {
         <h1 className="w-full text-center font-light text-3xl my-3 mb-6">
         Your Cart
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mx-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-5 mx-6">
         {/* "Cart items small devices" */}
-       <div className="  sm:hidden">
+       <div className="  xl:hidden">
          <ul className="-my-6 divide-y divide-gray-200">
            {cartItems.map((item) => (
              <li key={`${item.id}-${item.size}`} className="flex py-6">
@@ -156,7 +156,7 @@ const Cart = () => {
        </div>
 
        {/* "Cart items large devices" */}
-       <div className="min-h-44 col-span-2 hidden sm:block">
+       <div className="min-h-44 col-span-2 hidden xl:block">
          <table className="min-w-full text-sm text-gray-700 border">
            <thead className="border-gray-300 border-2">
              <tr>
@@ -201,7 +201,7 @@ const Cart = () => {
              <p>Rs. {subtotal.toFixed(2)}</p>
            </div>
            <div className="w-full flex justify-center">
-             <button className=" px-28 sm:px-36 py-4 mt-6 text-xs rounded-3xl shadow-md text-white bg-black">
+             <button className=" px-28  lg:px-36 py-4 mt-6 text-xs rounded-3xl shadow-md text-white bg-black">
                CHECK OUT
              </button>
            </div>
