@@ -160,6 +160,9 @@ const Footer = () => {
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
+                <Link to="/delete-account">
+                <li>Delete Account</li>          
+                </Link>
               </ul>
             )}
             <hr className="h-px  mr-3 bg-white  " />
@@ -218,6 +221,10 @@ const Footer = () => {
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
+                <Link to="/delete-account">
+                <li>Delete Account</li>
+                
+                </Link>
               </ul>
             </div>
           </div>
