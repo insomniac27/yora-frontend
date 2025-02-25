@@ -2,73 +2,100 @@ import React from 'react';
 
 const DeleteAccount = () => {
   return (
-    <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-      <h1 className="text-2xl font-bold mb-4 text-gray-800">
-        To delete an application from your device, follow the steps corresponding to your operating system:
-      </h1>
+    <div className="bg-white text-black p-6 max-w-2xl mx-auto font-sans">
+    <h1 className="text-2xl font-bold mb-4">
+      How to Delete Your Profile & Data on Yoraa App (Android & iOS)
+    </h1>
 
-      {/* Android Section */}
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-3 text-gray-700">For Android Devices:</h2>
-        <div className="mb-4">
-          <h3 className="font-medium text-gray-600">1. From the Home Screen or App Drawer:</h3>
-          <ul className="list-disc list-inside ml-4 text-gray-600">
-            <li>Locate the app you wish to remove.</li>
-            <li>Touch and hold the app icon until a menu appears.</li>
-            <li>Select “Uninstall” or drag the icon to the “Uninstall” option.</li>
-            <li>Confirm the uninstallation when prompted.</li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h3 className="font-medium text-gray-600">2. Through Settings:</h3>
-          <ul className="list-disc list-inside ml-4 text-gray-600">
-            <li>Open the “Settings” app.</li>
-            <li>Navigate to “Apps” or “App Management.”</li>
-            <li>Scroll through the list to find the desired app and tap on it.</li>
-            <li>Tap “Uninstall” and confirm when prompted.</li>
-          </ul>
-        </div>
-        <p className="text-sm text-gray-500 italic">
-          Note: Some pre-installed apps cannot be uninstalled but can be disabled to prevent them from running.
+    <div className="space-y-6">
+      {/* Step 1 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">Step 1: Open the App</h2>
+        <p className="text-gray-700">
+          • Launch Yoraa App on your Android or iOS device.
         </p>
       </div>
 
-      {/* iOS Section */}
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-3 text-gray-700">For iOS Devices (iPhone or iPad):</h2>
-        <div className="mb-4">
-          <h3 className="font-medium text-gray-600">1. From the Home Screen:</h3>
-          <ul className="list-disc list-inside ml-4 text-gray-600">
-            <li>Locate the app you want to delete.</li>
-            <li>Touch and hold the app icon until it jiggles.</li>
-            <li>Tap the minus (-) sign or “Remove App” option.</li>
-            <li>Choose “Delete App” and confirm the deletion.</li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h3 className="font-medium text-gray-600">2. From the App Library:</h3>
-          <ul className="list-disc list-inside ml-4 text-gray-600">
-            <li>Swipe left past all your Home Screen pages to access the App Library.</li>
-            <li>Find the app you wish to delete.</li>
-            <li>Touch and hold the app icon.</li>
-            <li>Select “Delete App” and confirm when prompted.</li>
-          </ul>
-        </div>
-        <p className="text-sm text-gray-500 italic">
-          Note: Deleting an app also removes its data. Some built-in Apple apps cannot be deleted but can be removed from the Home Screen.
+      {/* Step 2 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">Step 2: Go to Settings</h2>
+        <p className="text-gray-700">
+          • Tap on your profile icon (usually in the top left or right corner).
+        </p>
+        <p className="text-gray-700">
+          • Navigate to <span className="font-medium">Settings</span> or
+          <span className="font-medium">Account Settings</span>.
         </p>
       </div>
 
-      {/* General Notes */}
-      <div className="text-gray-600">
-        <p className="mb-2">
-          For both platforms, if you’ve purchased an app, you can reinstall it without repurchasing. Additionally, consider managing your device’s storage by removing unused apps and backing up important data.
+      {/* Step 3 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">
+          Step 3: Locate the “Delete Account” Option
+        </h2>
+        <p className="text-gray-700">
+          • Scroll down to find <span className="font-medium">Delete Account</span> or
+          <span className="font-medium">Delete Profile</span>.
         </p>
-        <p>
-          Regularly updating your device’s software and apps ensures optimal performance and security.
+        <p className="text-gray-700">
+          • Some apps may place this option under
+          <span className="font-medium">Privacy</span> or
+          <span className="font-medium">Security Settings</span>.
+        </p>
+      </div>
+
+      {/* Step 4 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">
+          Step 4: Confirm Account Deletion
+        </h2>
+        <p className="text-gray-700">
+          • You may see options like:
+          <ul className="list-disc pl-8 mt-2">
+            <li>Pause Account (temporary)</li>
+            <li>Delete Account (permanent)</li>
+          </ul>
+        </p>
+        <p className="text-gray-700 mt-2">
+          • Choose <span className="font-medium">Delete Account</span> for complete removal.
+        </p>
+      </div>
+
+      {/* Step 5 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">
+          Step 5: Follow the Final Steps
+        </h2>
+        <p className="text-gray-700">
+          • The app may ask for a reason for deleting your account.
+        </p>
+        <p className="text-gray-700">
+          • You may also need to enter your password or confirm via email/SMS.
+        </p>
+      </div>
+
+      {/* Step 6 */}
+      <div>
+        <h2 className="text-xl font-semibold mb-2">
+          Step 6: Uninstall the App (Optional)
+        </h2>
+        <p className="text-gray-700">
+          • Once your account is deleted, you can uninstall the app if you no longer need it.
+        </p>
+      </div>
+
+      {/* Note */}
+      <div className="bg-gray-100 p-4 rounded-lg">
+        <h2 className="text-xl font-semibold mb-2">Note:</h2>
+        <p className="text-gray-700">
+          • Account deletion is permanent, and all your data, including messages, matches, and profile details, will be erased.
+        </p>
+        <p className="text-gray-700">
+          • Some apps have a grace period before permanent deletion—check the app’s policy for details.
         </p>
       </div>
     </div>
+  </div>
   );
 };
 
