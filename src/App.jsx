@@ -16,6 +16,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundAndCancel from "./pages/RefundAndCancel";
 import PageNotFound from "./pages/PageNotFound";
 import DeleteAccount from "./pages/DeleteAccount";
+import AboutUs from "./pages/AboutUs";
 
 
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-cancel" element={<RefundAndCancel />} />
         <Route path="/remove-account" element={<DeleteAccount />} />
+        <Route path="/about-us" element={<AboutUs />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

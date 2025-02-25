@@ -96,7 +96,9 @@ const Footer = () => {
             </div>
             {isShow.brand && (
               <ul className=" flex flex-col gap-3 text-xs text-[#999]">
-                <li>About Us</li>
+                <Link to="/about-us">
+                  <li>About Us</li>
+                </Link>
                 <Link to="/contact-us">
                   <li>Contact Us</li>
                 </Link>
@@ -149,26 +151,28 @@ const Footer = () => {
             </div>
             {isShow.cservices && (
               <ul className=" flex flex-col gap-3 text-xs text-[#999] ">
-                <Link to="/refund-cancel">        
-                <li>Refund And Cancel Policy</li>
+                <Link to="/refund-cancel">
+                  <li>Refund And Cancel Policy</li>
                 </Link>
-                <li>Payment Policy</li>            
-                
-                <Link to="/shipping-and-delivery">            
-                <li>Shipping And Delivery Policy</li>
+                <li>Payment Policy</li>
+
+                <Link to="/shipping-and-delivery">
+                  <li>Shipping And Delivery Policy</li>
                 </Link>
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
                 <Link to="/remove-account">
-                <li>Delete Account</li>          
+                  <li>Delete Account</li>
                 </Link>
               </ul>
             )}
             <hr className="h-px  mr-3 bg-white  " />
           </div>
           <div>
-          <p className=" py-4 text-white w-full font-light text-center text-xs">© 2024 YORA. All rights reserved.</p>
+            <p className=" py-4 text-white w-full font-light text-center text-xs">
+              © 2025 YORA. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
@@ -181,7 +185,7 @@ const Footer = () => {
               <h3 className=" text-sm">SOCIAL</h3>
               <Link
                 className=" text-xs text-[#999]"
-                 to="mailto:contact@yoraa.in"
+                to="mailto:contact@yoraa.in"
               >
                 contact@yoraa.in
               </Link>
@@ -192,7 +196,9 @@ const Footer = () => {
               <h3 className=" text-sm">BRAND</h3>
 
               <ul className=" flex flex-col gap-3 text-xs text-[#999]">
-                <li>About Us</li>
+                <Link to="/about-us">
+                  <li>About Us</li>
+                </Link>
                 <Link to="/contact-us">
                   <li>Contact Us</li>
                 </Link>
@@ -211,29 +217,29 @@ const Footer = () => {
               <h3 className=" text-sm">CLIENT SERVICES</h3>
 
               <ul className=" flex flex-col gap-3 text-xs text-[#999] ">
-                <Link to="/refund-cancel">        
-                <li>Refund And Cancel Policy</li>
+                <Link to="/refund-cancel">
+                  <li>Refund And Cancel Policy</li>
                 </Link>
                 <li>Payment Policy</li>
-                <Link to="/shipping-and-delivery">            
-                <li>Shipping And Delivery Policy</li>
+                <Link to="/shipping-and-delivery">
+                  <li>Shipping And Delivery Policy</li>
                 </Link>
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
                 <Link to="/remove-account">
-                <li>Delete Account</li>
-                
+                  <li>Delete Account</li>
                 </Link>
               </ul>
             </div>
           </div>
 
-            <div className=" py-3 col-span-3 ">
+          <div className=" py-3 col-span-3 ">
             <hr className="h-px  mx-10 bg-white " />
-              <p className=" py-4 pt-6 text-white w-full font-light text-center text-xs">© 2025 YORA. All rights reserved.</p>
-            </div>
-
+            <p className=" py-4 pt-6 text-white w-full font-light text-center text-xs">
+              © 2025 YORA. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </>
