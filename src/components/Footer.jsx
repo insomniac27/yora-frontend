@@ -160,7 +160,7 @@ const Footer = () => {
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
-                <Link to="/delete-account">
+                <Link to="/remove-account">
                 <li>Delete Account</li>          
                 </Link>
               </ul>
@@ -221,7 +221,7 @@ const Footer = () => {
                 <li>FAQs</li>
                 <li>Track Order</li>
                 <li>Exchange & Returns</li>
-                <Link to="/delete-account">
+                <Link to="/remove-account">
                 <li>Delete Account</li>
                 
                 </Link>

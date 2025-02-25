@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-cancel" element={<RefundAndCancel />} />
-        <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/remove-account" element={<DeleteAccount />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
