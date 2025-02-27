@@ -17,6 +17,7 @@ import RefundAndCancel from "./pages/RefundAndCancel";
 import PageNotFound from "./pages/PageNotFound";
 import DeleteAccount from "./pages/DeleteAccount";
 import AboutUs from "./pages/AboutUs";
+import Login from "./pages/Login";
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/refund-cancel" element={<RefundAndCancel />} />
         <Route path="/remove-account" element={<DeleteAccount />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
