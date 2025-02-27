@@ -88,10 +88,7 @@ const DeleteAccount = () => {
       <div className="bg-gray-100 p-4 rounded-lg">
         <h2 className="text-xl font-semibold mb-2">Note:</h2>
         <p className="text-gray-700">
-          • Account deletion is permanent, and all your data, including messages, matches, and profile details, will be erased.
-        </p>
-        <p className="text-gray-700">
-          • Some apps have a grace period before permanent deletion—check the app’s policy for details.
+          • Account deletion is permanent, and all your data. —check the app’s policy for details.
         </p>
       </div>
     </div>
