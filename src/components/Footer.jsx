@@ -103,10 +103,10 @@ const Footer = () => {
                   <li>Contact Us</li>
                 </Link>
 
-                <Link to="/terms-and-conditions">
+                <Link to="https://yoraa.app/">
                   <li>Terms & Conditions</li>
                 </Link>
-                <Link to="/privacy-policy">
+                <Link to="https://www.yoraa.co/">
                   <li>Privacy Policy</li>
                 </Link>
               </ul>
@@ -203,10 +203,10 @@ const Footer = () => {
                   <li>Contact Us</li>
                 </Link>
 
-                <Link to="/terms-and-conditions">
+                <Link to="https://yoraa.app/">
                   <li>Terms & Conditions</li>
                 </Link>
-                <Link to="/privacy-policy">
+                <Link to="https://www.yoraa.co/">
                   <li>Privacy Policy</li>
                 </Link>
               </ul>
