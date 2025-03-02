@@ -18,6 +18,8 @@ import PageNotFound from "./pages/PageNotFound";
 import DeleteAccount from "./pages/DeleteAccount";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import VerifyOtp from "./pages/VerifyOtp";
 
 
 
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/remove-account" element={<DeleteAccount />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
